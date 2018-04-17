@@ -14,6 +14,11 @@ then
   gps_time="0"
   gps_lat="0"
   gps_lon="0"  
+  error_val="error:GPS-has no fix"
+elif[ "$gps_time" = "0" ] && [ "gps_lat" -eq "" ] && [ "$gps_long" -eq "" ] 
+  gps_time="0"
+  gps_lat="0"
+  gps_lon="0"
   error_val="error:GPS-disconnected"
 else
   gps_time=$(echo $str | cut -f2 -d,)
